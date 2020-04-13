@@ -8,12 +8,12 @@ class Scraper
 
   def get_page
     doc = Nokogiri::HTML(open("http://learn-co-curriculum.github.io/site-for-scraping/courses"))
-    # binding.pry
   end
 
   def get_courses
     self.get_page.css(".post") #he Nokogiri gem returns a Nokogiri::XML::NodeSet (which looks like an Array in Ruby), we can use Ruby methods, such as .each and .collect, to iterate over it.
-end
+binding.pry
+  end
 
   def make_courses
     self.get_courses.each do |post|
